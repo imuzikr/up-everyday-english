@@ -16,6 +16,8 @@ jobs:
     steps:
     - name: 레포지토리 체크아웃
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: 파이썬 환경 설정
       uses: actions/setup-python@v5
@@ -36,3 +38,4 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "Automated update: Add daily conversation html"
+        push_options: '--force-with-lease'
