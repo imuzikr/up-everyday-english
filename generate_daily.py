@@ -43,13 +43,17 @@ def generate_content():
     }
     """
     
-  payload = {
+      prompt = """
+    ... (긴 프롬프트)
+    """
+
+    payload = {        # ← 4칸 들여쓰기로 수정
         "model": "solar-pro",
         "messages": [
             {"role": "system", "content": "당신은 친절한 초등영어 선생님입니다. 매번 창의적이고 중복되지 않는 새로운 대화문을 작성합니다. JSON 포맷으로만 응답하세요."},
             {"role": "user", "content": prompt}
         ],
-        "temperature": 0.8,  # 이 줄을 추가하여 창의성을 높입니다
+        "temperature": 0.8,
         "response_format": {"type": "json_object"}
     }
     
